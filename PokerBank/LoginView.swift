@@ -13,78 +13,81 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     var body: some View {
-        VStack {
-            VStack(alignment: .leading) {
-                HStack{ Spacer() }
-                Text("Hello.")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                Text("Welcome Back")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-            }
-            .frame(height: 260)
-            .padding(.leading)
-            .background(Color(springGreen))
-            .clipShape(RoundedShape(corners: [.bottomRight]))
-            
-            VStack(spacing: 40) {
-                CustomInputField(imageName: "envelope", 
-                                 placeholderText: "Email",
-                                 text: $email)
-                CustomInputField(imageName: "lock", 
-                                 placeholderText: "Password",
-                                 text: $password)
-            }
-            .padding(.horizontal, 32)
-            .padding(.top, 44)
-            
-            HStack {
-                Spacer()
-                NavigationLink {
-                    Text("Reset password view..")
-                } label: {
-                    Text("Forgot Password?")
-                        .font(.caption)
+        NavigationStack {
+            VStack {
+                VStack(alignment: .leading) {
+                    HStack{ Spacer() }
+                    Text("Hello.")
+                        .font(.largeTitle)
                         .fontWeight(.semibold)
-                        .foregroundColor(Color(.systemGreen))
-                        .padding(.top)
-                        .padding(.trailing, 24)
+                    Text("Welcome Back")
+                        .font(.largeTitle)
+                        .fontWeight(.semibold)
                 }
-            }
-            
-            Button {
-                print("Sign in here..")
-            } label: {
-                Text("Sign In")
-                    .font(.headline)
-                    .foregroundColor(.black)
-                    .frame(width: 340, height: 50)
-                    .background(springGreen)
-                    .clipShape(Capsule())
-                    .padding()
-            }
-            .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
-            
-            Spacer()
-            
-            NavigationLink {
-                RegistrationView()
-                    .navigationBarHidden(true)
-            } label: {
+                .frame(height: 260)
+                .padding(.leading)
+                .background(Color(springGreen))
+                .clipShape(RoundedShape(corners: [.bottomRight]))
+                
+                VStack(spacing: 40) {
+                    CustomInputField(imageName: "envelope",
+                                     placeholderText: "Email",
+                                     text: $email)
+                    CustomInputField(imageName: "lock",
+                                     placeholderText: "Password",
+                                     text: $password,
+                                     isSecureField: true)
+                }
+                .padding(.horizontal, 32)
+                .padding(.top, 44)
+                
                 HStack {
-                    Text("Dont have an account?")
-                        .font(.caption)
-                    Text("Sign Up")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
+                    Spacer()
+                    NavigationLink {
+                        Text("Reset password view..")
+                            .navigationBarBackButtonHidden(true)
+                    } label: {
+                        Text("Forgot Password?")
+                            .font(.system(size: 14))
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color(.systemGreen))
+                            .padding(.top)
+                            .padding(.trailing, 24)
+                    }
                 }
+                
+                Button {
+                    print("Sign in here..")
+                } label: {
+                    Text("Sign In")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                        .frame(width: 340, height: 50)
+                        .background(springGreen)
+                        .clipShape(Capsule())
+                        .padding()
+                }
+                .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
+                
+                Spacer()
+                
+                NavigationLink {
+                    RegistrationView()
+                        .navigationBarBackButtonHidden(true)
+                } label: {
+                    HStack {
+                        Text("Dont have an account?")
+                            .font(.system(size: 14))
+                        Text("Sign Up")
+                            .font(.system(size: 14))
+                            .fontWeight(.bold)
+                    }
+                }
+                .padding(.bottom, 32)
+                .foregroundColor(Color(.systemGreen))
             }
-            .padding(.bottom, 32)
-            .foregroundColor(Color(.systemGreen))
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
-        .navigationBarHidden(true)
     }
 }
 
