@@ -14,6 +14,11 @@
 		0B154DC32B327F73003B0B4B /* PokerBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B154DC22B327F73003B0B4B /* PokerBankTests.swift */; };
 		0B154DCD2B327F73003B0B4B /* PokerBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B154DCC2B327F73003B0B4B /* PokerBankUITests.swift */; };
 		0B154DCF2B327F73003B0B4B /* PokerBankUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B154DCE2B327F73003B0B4B /* PokerBankUITestsLaunchTests.swift */; };
+		0BDBA2492B337CEE00E1AD41 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBA2482B337CEE00E1AD41 /* HomeView.swift */; };
+		0BDBA24B2B337D0800E1AD41 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBA24A2B337D0800E1AD41 /* ProfileView.swift */; };
+		0BDBA24D2B337EDB00E1AD41 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBA24C2B337EDB00E1AD41 /* User.swift */; };
+		0BDBA24F2B3388A700E1AD41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BDBA24E2B3388A700E1AD41 /* GoogleService-Info.plist */; };
+		0BDBA2532B338BBD00E1AD41 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBA2522B338BBD00E1AD41 /* AuthViewModel.swift */; };
 		0BFED2912B3288B300D59F49 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFED2902B3288B300D59F49 /* LoginView.swift */; };
 		0BFED2932B3288C900D59F49 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFED2922B3288C900D59F49 /* RegistrationView.swift */; };
 		0BFED2952B328BEF00D59F49 /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFED2942B328BEF00D59F49 /* RoundedShape.swift */; };
@@ -48,6 +53,11 @@
 		0B154DC82B327F73003B0B4B /* PokerBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokerBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B154DCC2B327F73003B0B4B /* PokerBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerBankUITests.swift; sourceTree = "<group>"; };
 		0B154DCE2B327F73003B0B4B /* PokerBankUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerBankUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0BDBA2482B337CEE00E1AD41 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0BDBA24A2B337D0800E1AD41 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		0BDBA24C2B337EDB00E1AD41 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0BDBA24E2B3388A700E1AD41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		0BDBA2522B338BBD00E1AD41 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		0BFED2902B3288B300D59F49 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0BFED2922B3288C900D59F49 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		0BFED2942B328BEF00D59F49 /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
@@ -102,13 +112,16 @@
 		0B154DB02B327F71003B0B4B /* PokerBank */ = {
 			isa = PBXGroup;
 			children = (
+				0BDBA2512B338BA500E1AD41 /* Authentication */,
 				0BFED2962B3290AF00D59F49 /* Components */,
 				0B154DB12B327F71003B0B4B /* PokerBankApp.swift */,
 				0B154DB32B327F71003B0B4B /* ContentView.swift */,
 				0B154DB52B327F72003B0B4B /* Assets.xcassets */,
-				0BFED2902B3288B300D59F49 /* LoginView.swift */,
-				0BFED2922B3288C900D59F49 /* RegistrationView.swift */,
+				0BDBA24E2B3388A700E1AD41 /* GoogleService-Info.plist */,
 				0B154DB72B327F73003B0B4B /* Preview Content */,
+				0BDBA2482B337CEE00E1AD41 /* HomeView.swift */,
+				0BDBA24A2B337D0800E1AD41 /* ProfileView.swift */,
+				0BDBA24C2B337EDB00E1AD41 /* User.swift */,
 			);
 			path = PokerBank;
 			sourceTree = "<group>";
@@ -136,6 +149,16 @@
 				0B154DCE2B327F73003B0B4B /* PokerBankUITestsLaunchTests.swift */,
 			);
 			path = PokerBankUITests;
+			sourceTree = "<group>";
+		};
+		0BDBA2512B338BA500E1AD41 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				0BFED2902B3288B300D59F49 /* LoginView.swift */,
+				0BFED2922B3288C900D59F49 /* RegistrationView.swift */,
+				0BDBA2522B338BBD00E1AD41 /* AuthViewModel.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		0BFED2962B3290AF00D59F49 /* Components */ = {
@@ -235,6 +258,9 @@
 				Base,
 			);
 			mainGroup = 0B154DA52B327F71003B0B4B;
+			packageReferences = (
+				0BDBA2502B33897400E1AD41 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 0B154DAF2B327F71003B0B4B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -253,6 +279,7 @@
 			files = (
 				0B154DB92B327F73003B0B4B /* Preview Assets.xcassets in Resources */,
 				0B154DB62B327F72003B0B4B /* Assets.xcassets in Resources */,
+				0BDBA24F2B3388A700E1AD41 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,9 +304,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BDBA2532B338BBD00E1AD41 /* AuthViewModel.swift in Sources */,
+				0BDBA24B2B337D0800E1AD41 /* ProfileView.swift in Sources */,
 				0BFED2952B328BEF00D59F49 /* RoundedShape.swift in Sources */,
+				0BDBA2492B337CEE00E1AD41 /* HomeView.swift in Sources */,
 				0BFED2912B3288B300D59F49 /* LoginView.swift in Sources */,
 				0B154DB42B327F71003B0B4B /* ContentView.swift in Sources */,
+				0BDBA24D2B337EDB00E1AD41 /* User.swift in Sources */,
 				0B154DB22B327F71003B0B4B /* PokerBankApp.swift in Sources */,
 				0BFED2982B3290D800D59F49 /* CustomInputField.swift in Sources */,
 				0BFED2932B3288C900D59F49 /* RegistrationView.swift in Sources */,
@@ -458,7 +489,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.amitsai.PokerBank;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pokerbank.PokerBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -486,7 +517,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.amitsai.PokerBank;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pokerbank.PokerBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -606,6 +637,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0BDBA2502B33897400E1AD41 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 0B154DA62B327F71003B0B4B /* Project object */;
 }

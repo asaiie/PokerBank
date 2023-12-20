@@ -45,7 +45,7 @@ struct LoginView: View {
                     Spacer()
                     NavigationLink {
                         Text("Reset password view..")
-                            .navigationBarBackButtonHidden(true)
+                            .navigationBarBackButtonHidden(false)
                     } label: {
                         Text("Forgot Password?")
                             .font(.system(size: 14))
