@@ -10,9 +10,9 @@ import SwiftUI
 struct RegistrationView: View {
     @State private var email = ""
     @State private var username = ""
-    @State private var fullname = ""
     @State private var university = ""
     @State private var password = ""
+    @State private var confirmPassword = ""
     
     @Environment(\.dismiss) var dismiss
     
@@ -37,18 +37,22 @@ struct RegistrationView: View {
                     CustomInputField(imageName: "envelope",
                                      placeholderText: "Email",
                                      text: $email)
-                    CustomInputField(imageName: "person",
+                    CustomInputField(imageName: "at",
                                      placeholderText: "Username",
                                      text: $username)
-                    CustomInputField(imageName: "person",
-                                     placeholderText: "Full name",
-                                     text: $fullname)
+//                    CustomInputField(imageName: "person",
+//                                     placeholderText: "Full name",
+//                                     text: $fullname)
                     CustomInputField(imageName: "book",
                                      placeholderText: "University",
                                      text: $university)
                     CustomInputField(imageName: "lock",
                                      placeholderText: "Password",
                                      text: $password,
+                                     isSecureField: true)
+                    CustomInputField(imageName: "lock",
+                                     placeholderText: "Confirm Password",
+                                     text: $confirmPassword,
                                      isSecureField: true)
                 }
                 .padding(32)
