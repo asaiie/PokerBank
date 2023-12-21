@@ -14,7 +14,7 @@ struct ProfileView: View {
             
             Text("@" + User.MOCK_USER.username)
             Text(User.MOCK_USER.email)
-            Text(User.MOCK_USER.univeristy)
+            Text(User.MOCK_USER.university)
             
             Button {
                 print("Sign out..")

@@ -12,6 +12,8 @@ let springGreen = Color(red: 0.5882, green: 0.902, blue: 0.7451)
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -57,7 +59,10 @@ struct LoginView: View {
                 }
                 
                 Button {
-                    print("Sign in here..")
+                    Task {
+                        try await viewModel.signIn(withEmail: email, 
+                                                   password: password)
+                    }
                 } label: {
                     Text("Sign In")
                         .font(.headline)

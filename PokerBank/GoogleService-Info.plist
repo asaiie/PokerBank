@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDos7szyIHDjkMUDI6sj9iMi8W36UyEHK4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>503663399274</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pokerbank.PokerBank</string>
+	<key>PROJECT_ID</key>
+	<string>pokerbank-4ba2b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pokerbank-4ba2b.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:503663399274:ios:2ce2cb3a4d847df265d513</string>
+</dict>
+</plist>

@@ -6,13 +6,20 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct PokerBankApp: App {
+    @StateObject var viewModel = AuthViewModel()
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            LoginView()
-            //ContentView()
+            ContentView()
+                .environmentObject(viewModel)
         }
     }
 }
