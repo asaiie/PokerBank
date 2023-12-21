@@ -41,9 +41,6 @@ struct RegistrationView: View {
                     CustomInputField(imageName: "at",
                                      placeholderText: "Username",
                                      text: $username)
-//                    CustomInputField(imageName: "person",
-//                                     placeholderText: "Full name",
-//                                     text: $fullname)
                     CustomInputField(imageName: "book",
                                      placeholderText: "University",
                                      text: $university)
@@ -51,10 +48,26 @@ struct RegistrationView: View {
                                      placeholderText: "Password",
                                      text: $password,
                                      isSecureField: true)
-                    CustomInputField(imageName: "lock",
-                                     placeholderText: "Confirm Password",
-                                     text: $confirmPassword,
-                                     isSecureField: true)
+                    ZStack(alignment: .trailing) {
+                        CustomInputField(imageName: "lock",
+                                         placeholderText: "Confirm Password",
+                                         text: $confirmPassword,
+                                         isSecureField: true)
+                        
+                        if !password.isEmpty && !confirmPassword.isEmpty {
+                            if password == confirmPassword {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .imageScale(.medium)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color(.systemGreen))
+                            } else {
+                                Image(systemName: "xmark.circle.fill")
+                                    .imageScale(.medium)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color(.systemRed))
+                            }
+                        }
+                    }
                 }
                 .padding(32)
                 
@@ -75,6 +88,8 @@ struct RegistrationView: View {
                         .padding()
                 }
                 .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
+                .disabled(!formIsValid)
+                .opacity(formIsValid ? 1.0 : 0.5)
                 
                 Spacer()
                 
@@ -94,6 +109,18 @@ struct RegistrationView: View {
             }
             .ignoresSafeArea()
         }
+    }
+}
+
+extension RegistrationView: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
+        && confirmPassword == password
+        && !username.isEmpty
+        && !university.isEmpty
     }
 }
 
