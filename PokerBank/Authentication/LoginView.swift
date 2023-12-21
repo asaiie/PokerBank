@@ -4,7 +4,8 @@
 //
 //  Created by Amit Erraguntla on 12/19/23.
 //
-// i own taranch
+// i own zubin
+//
 import SwiftUI
 
 let springGreen = Color(red: 0.5882, green: 0.902, blue: 0.7451)
