@@ -14,6 +14,3 @@ struct User: Identifiable, Codable {
     let university: String
 }
 
-extension User {
-    static var MOCK_USER = User(id: NSUUID().uuidString, username: "legoat123", email: "lebron_james@gmail.com", university: "Brown University")
-}
