@@ -14,6 +14,7 @@
 		0B154DC32B327F73003B0B4B /* PokerBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B154DC22B327F73003B0B4B /* PokerBankTests.swift */; };
 		0B154DCD2B327F73003B0B4B /* PokerBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B154DCC2B327F73003B0B4B /* PokerBankUITests.swift */; };
 		0B154DCF2B327F73003B0B4B /* PokerBankUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B154DCE2B327F73003B0B4B /* PokerBankUITestsLaunchTests.swift */; };
+		0B5D28012B360504004FA34F /* InGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D28002B360504004FA34F /* InGameView.swift */; };
 		0BDBA2492B337CEE00E1AD41 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBA2482B337CEE00E1AD41 /* HomeView.swift */; };
 		0BDBA24B2B337D0800E1AD41 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBA24A2B337D0800E1AD41 /* ProfileView.swift */; };
 		0BDBA24D2B337EDB00E1AD41 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBA24C2B337EDB00E1AD41 /* User.swift */; };
@@ -58,6 +59,7 @@
 		0B154DC82B327F73003B0B4B /* PokerBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokerBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B154DCC2B327F73003B0B4B /* PokerBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerBankUITests.swift; sourceTree = "<group>"; };
 		0B154DCE2B327F73003B0B4B /* PokerBankUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerBankUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0B5D28002B360504004FA34F /* InGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InGameView.swift; sourceTree = "<group>"; };
 		0BDBA2482B337CEE00E1AD41 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0BDBA24A2B337D0800E1AD41 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0BDBA24C2B337EDB00E1AD41 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				0BDBA2512B338BA500E1AD41 /* Authentication */,
 				0BFED2962B3290AF00D59F49 /* Components */,
 				0BDBA2482B337CEE00E1AD41 /* HomeView.swift */,
+				0B5D28002B360504004FA34F /* InGameView.swift */,
 				0BDBA24A2B337D0800E1AD41 /* ProfileView.swift */,
 				0BDBA24C2B337EDB00E1AD41 /* User.swift */,
 				0B154DB52B327F72003B0B4B /* Assets.xcassets */,
@@ -326,6 +329,7 @@
 				0BFED2952B328BEF00D59F49 /* RoundedShape.swift in Sources */,
 				0BDBA2492B337CEE00E1AD41 /* HomeView.swift in Sources */,
 				0BFED2912B3288B300D59F49 /* LoginView.swift in Sources */,
+				0B5D28012B360504004FA34F /* InGameView.swift in Sources */,
 				0B154DB42B327F71003B0B4B /* ContentView.swift in Sources */,
 				0BDBA24D2B337EDB00E1AD41 /* User.swift in Sources */,
 				0B154DB22B327F71003B0B4B /* PokerBankApp.swift in Sources */,

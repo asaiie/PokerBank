@@ -13,6 +13,8 @@ enum HomeGameOptions {
 }
 
 struct HomeView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     @State private var smallBlind = ""
     @State private var bigBlind = ""
     @State private var gameCode = ""
@@ -64,6 +66,16 @@ struct HomeView: View {
                                     .stroke(lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(Color(.systemGray4))
                             }
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .frame(width: 44, height: 44)
+                                    .foregroundColor(springGreen)
+                                Image(systemName: "arrow.right")
+                                    .resizable()
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.black)
+                            }
+                            
                         }
                     } else {
                         CollapsedPickerView(title: "Create Game", description: "Enter blinds")
@@ -88,18 +100,29 @@ struct HomeView: View {
                                 .fontWeight(.semibold)
                             Spacer()
                         }
-                        HStack {
-                            Image(systemName: "lock")
-                                .imageScale(.small)
-                            TextField("Game Code", text: $gameCode)
-                                .font(.subheadline)
-                        }
-                        .frame(height: 44)
-                        .padding(.horizontal)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-                                .foregroundStyle(Color(.systemGray4))
+                        HStack{
+                            HStack {
+                                Image(systemName: "lock")
+                                    .imageScale(.small)
+                                TextField("Game Code", text: $gameCode)
+                                    .font(.subheadline)
+                            }
+                            .frame(height: 44)
+                            .padding(.horizontal)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                                    .foregroundStyle(Color(.systemGray4))
+                            }
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .frame(width: 44, height: 44)
+                                    .foregroundColor(springGreen)
+                                Image(systemName: "arrow.right")
+                                    .resizable()
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.black)
+                            }
                         }
                     } else {
                         CollapsedPickerView(title: "Join Game", description: "Enter code")
@@ -123,15 +146,21 @@ struct HomeView: View {
                         ProfileView()
                             .navigationBarBackButtonHidden(false)
                     } label: {
-                        Image(systemName: "person")
-                            .foregroundColor(.black)
-                            .background(Color(.systemGreen))
-                            .frame(width: 100, height: 100)
-                            .clipShape(Circle())
-                            .padding()
+                        ZStack {
+                            Circle()
+                                .frame(width: 72, height: 72)
+                                .foregroundColor(springGreen)
+                            Image(systemName: "person")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .foregroundColor(.black)
+                        }
+                        .frame(width: 72, height: 72)
+                        .shadow(radius: 5)
                         
                     }
                 }
+                .padding()
             }
             .ignoresSafeArea()
         }
@@ -150,9 +179,9 @@ struct CollapsedPickerView: View {
         VStack {
             HStack {
                 Text(title)
-                    .foregroundStyle(.gray)
                 Spacer()
                 Text(description)
+                    .foregroundStyle(.gray)
             }
             .fontWeight(.semibold)
             .font(.subheadline)
