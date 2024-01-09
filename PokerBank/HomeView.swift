@@ -66,16 +66,21 @@ struct HomeView: View {
                                     .stroke(lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(Color(.systemGray4))
                             }
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 8)
-                                    .frame(width: 44, height: 44)
-                                    .foregroundColor(springGreen)
-                                Image(systemName: "arrow.right")
-                                    .resizable()
-                                    .frame(width: 24, height: 24)
-                                    .foregroundColor(.black)
-                            }
                             
+                            Button {
+                                // task
+                            } label: {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .frame(width: 44, height: 44)
+                                        .foregroundColor(springGreen)
+                                    Image(systemName: "arrow.right")
+                                        .resizable()
+                                        .frame(width: 24, height: 24)
+                                        .foregroundColor(.black)
+                                }
+                            }
+    
                         }
                     } else {
                         CollapsedPickerView(title: "Create Game", description: "Enter blinds")
@@ -114,14 +119,18 @@ struct HomeView: View {
                                     .stroke(lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(Color(.systemGray4))
                             }
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 8)
-                                    .frame(width: 44, height: 44)
-                                    .foregroundColor(springGreen)
-                                Image(systemName: "arrow.right")
-                                    .resizable()
-                                    .frame(width: 24, height: 24)
-                                    .foregroundColor(.black)
+                            Button {
+                                // task
+                            } label: {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .frame(width: 44, height: 44)
+                                        .foregroundColor(springGreen)
+                                    Image(systemName: "arrow.right")
+                                        .resizable()
+                                        .frame(width: 24, height: 24)
+                                        .foregroundColor(.black)
+                                }
                             }
                         }
                     } else {
