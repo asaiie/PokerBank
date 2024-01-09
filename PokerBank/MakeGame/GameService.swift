@@ -11,8 +11,8 @@ import Firebase
 
 struct GameService {
     func uploadGame(bigBlind: String, smallBlind: String, currMoney: String, gameCode: Int) {
-        //guard let uid = Auth.auth().currentUser?.uid else {return}
-        let data = [//"GameHost": uid,
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        let data = ["GameHost": uid,
                     "bigBlind": bigBlind,
                     "smallBlind": smallBlind,
                     "TotalMoney": currMoney, 
