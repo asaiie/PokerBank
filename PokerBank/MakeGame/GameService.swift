@@ -24,17 +24,20 @@ struct GameService {
             }
     }
     
-    func getAllGames(){
-        Firestore.firestore().collection("activeGames").getDocuments{snapshot, _ in
+    func getAllGames(gameCode: String){
+        Firestore.firestore().collection("activeGames")
+            .whereField("gameCode", isEqualTo: Int(gameCode))
+            .getDocuments{snapshot, _ in
             guard let documents = snapshot?.documents else {return}
-            
-            documents.forEach { doc in
-                print(doc.data()["bigBlind"])
+                /*documents.forEach { doc in
+                    print(doc.data()["gameCode"])
+                }*/
+                print(documents[0].data())
             }
-            
         }
+        
     }
-}
+
 
 /*
 Game struc should contain:

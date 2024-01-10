@@ -19,6 +19,7 @@ struct HomeView: View {
     @State private var bigBlind = ""
     @State private var gameCode = ""
     @ObservedObject var uploadViewModel = UploadGameViewModel()
+    @ObservedObject var joinViewModel = ActiveGameViewModel()
     @State private var selectedOption: HomeGameOptions = .createGame
     
     var body: some View {
@@ -71,6 +72,7 @@ struct HomeView: View {
                             Button {
                                 // task
                                 uploadViewModel.uploadGame(wBig: bigBlind, wSmall: smallBlind, wCurr: "0", wGame: Int.random(in: 10000..<99999))
+
                             } label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 8)
@@ -123,6 +125,7 @@ struct HomeView: View {
                             }
                             Button {
                                 // task
+                                joinViewModel.fetchGames(finalGameCode: gameCode)
                             } label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 8)
