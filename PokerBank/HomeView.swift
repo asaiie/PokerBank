@@ -160,18 +160,13 @@ struct HomeView: View {
                         ProfileView()
                             .navigationBarBackButtonHidden(false)
                     } label: {
-                        ZStack {
-                            Circle()
-                                .frame(width: 72, height: 72)
-                                .foregroundColor(springGreen)
-                            Image(systemName: "person")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .foregroundColor(.black)
-                        }
-                        .frame(width: 72, height: 72)
-                        .shadow(radius: 5)
-                        
+                        Image(systemName: "person.fill")
+                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            .frame(width: 72, height: 72)
+                            .foregroundColor(.black)
+                            .background(springGreen)
+                            .clipShape(Circle())
+                            .shadow(radius: 5)
                     }
                 }
                 .padding()
