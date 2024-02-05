@@ -9,10 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var gameViewModel: ActiveGameViewModel
+
     var body: some View {
         Group {
             if viewModel.userSession != nil {
-                HomeView()
+                if gameViewModel.currentGame != nil {
+                    BetaInGameView(game: gameViewModel.currentGame!)
+                }
+                else{
+                    HomeView()
+                }
             } else {
                 LoginView()
             }

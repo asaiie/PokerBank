@@ -11,6 +11,7 @@ import Firebase
 @main
 struct PokerBankApp: App {
     @StateObject var viewModel = AuthViewModel()
+    @StateObject var gameViewModel = ActiveGameViewModel()
     
     init() {
         FirebaseApp.configure()
@@ -20,6 +21,7 @@ struct PokerBankApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(viewModel)
+                .environmentObject(gameViewModel)
         }
     }
 }

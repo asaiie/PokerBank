@@ -124,9 +124,7 @@ struct HomeView: View {
                                     .foregroundStyle(Color(.systemGray4))
                             }
                             Button {
-                                if let game: Game = joinViewModel.fetchGames(finalGameCode: gameCode){
-                                    BetaInGameView(game: game)
-                                }
+                                    joinViewModel.fetchGames(finalGameCode: gameCode)
                                 //BetaInGameView(joinViewModel.fetchGames(finalGameCode: gameCode))
                                 // task
    
