@@ -124,12 +124,13 @@ struct HomeView: View {
                                     .foregroundStyle(Color(.systemGray4))
                             }
                             Button {
-                                if let game: Game = joinViewModel.fetchGames(finalGameCode: gameCode){
-                                    BetaInGameView(game: game)
+                                Task {
+                                    if let game: Game = try await joinViewModel.fetchGames(finalGameCode: gameCode){
+                                        print(gameCode)
+                                        print(game)
+                                        BetaInGameView(game: game)
+                                    }
                                 }
-                                //BetaInGameView(joinViewModel.fetchGames(finalGameCode: gameCode))
-                                // task
-   
                             } label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 8)

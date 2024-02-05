@@ -25,6 +25,7 @@
 		0BE1ABE02B34C909006DDFDA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0BE1ABDF2B34C909006DDFDA /* FirebaseFirestore */; };
 		0BE1ABE22B34C909006DDFDA /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0BE1ABE12B34C909006DDFDA /* FirebaseFirestoreSwift */; };
 		0BE1ABE42B34C909006DDFDA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0BE1ABE32B34C909006DDFDA /* FirebaseStorage */; };
+		0BF684352B716020006FACCE /* VenmoSyncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF684342B716020006FACCE /* VenmoSyncView.swift */; };
 		0BFED2912B3288B300D59F49 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFED2902B3288B300D59F49 /* LoginView.swift */; };
 		0BFED2932B3288C900D59F49 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFED2922B3288C900D59F49 /* RegistrationView.swift */; };
 		0BFED2952B328BEF00D59F49 /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFED2942B328BEF00D59F49 /* RoundedShape.swift */; };
@@ -72,6 +73,7 @@
 		0BDBA24C2B337EDB00E1AD41 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0BDBA24E2B3388A700E1AD41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "PokerBank/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0BDBA2522B338BBD00E1AD41 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		0BF684342B716020006FACCE /* VenmoSyncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenmoSyncView.swift; sourceTree = "<group>"; };
 		0BFED2902B3288B300D59F49 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0BFED2922B3288C900D59F49 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		0BFED2942B328BEF00D59F49 /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				0BFED2902B3288B300D59F49 /* LoginView.swift */,
 				0BFED2922B3288C900D59F49 /* RegistrationView.swift */,
 				0BDBA2522B338BBD00E1AD41 /* AuthViewModel.swift */,
+				0BF684342B716020006FACCE /* VenmoSyncView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				0BFED2932B3288C900D59F49 /* RegistrationView.swift in Sources */,
 				0CF026702B4CA18A00476CE8 /* UploadGameViewModel.swift in Sources */,
 				0C3D638D2B70797700ABAB58 /* BetaInGameView.swift in Sources */,
+				0BF684352B716020006FACCE /* VenmoSyncView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

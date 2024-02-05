@@ -10,7 +10,7 @@ import Foundation
 class ActiveGameViewModel: ObservableObject {
     let service = GameService()
     init(){}
-    func fetchGames(finalGameCode: String)-> Game?{
-        service.getAllGames(gameCode: finalGameCode)
+    func fetchGames(finalGameCode: String) async throws -> Game?{
+        try await service.getAllGames(gameCode: finalGameCode)
     }
 }
