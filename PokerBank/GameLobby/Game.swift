@@ -5,4 +5,13 @@
 //  Created by Zubin Oommen on 2/1/24.
 //
 
-import Foundation
+import FirebaseFirestoreSwift
+
+struct Game: Identifiable, Decodable {
+    @DocumentID var id: String?
+    let GameHost: String
+    let TotalMoney: String
+    let bigBlind: String
+    let gameCode: Int
+    let smallBlind: String
+}

@@ -8,6 +8,7 @@
 import Foundation
 
 import Firebase
+import FirebaseFirestoreSwift
 
 struct GameService {
     func uploadGame(bigBlind: String, smallBlind: String, currMoney: String, gameCode: Int) {
@@ -24,15 +25,17 @@ struct GameService {
             }
     }
     
-    func getAllGames(gameCode: String){
+    func getAllGames(gameCode: String, completion: @escaping(Game) -> Void){
         Firestore.firestore().collection("activeGames")
             .whereField("gameCode", isEqualTo: Int(gameCode))
             .getDocuments{snapshot, _ in
-            guard let documents = snapshot?.documents else {return}
+                guard let documents = snapshot?.documents else {return}
+            guard let game = try? documents[0].data(as: Game.self) else {return}
+            completion(game)
                 /*documents.forEach { doc in
                     print(doc.data()["gameCode"])
                 }*/
-                print(documents[0].data())
+                //need to put a try catch here.
             }
         }
         
