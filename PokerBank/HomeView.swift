@@ -123,10 +123,13 @@ struct HomeView: View {
                                     .stroke(lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(Color(.systemGray4))
                             }
-                            NavigationLink {
-                                BetaInGameView()
+                            Button {
+                                if let game: Game = joinViewModel.fetchGames(finalGameCode: gameCode){
+                                    BetaInGameView(game: game)
+                                }
+                                //BetaInGameView(joinViewModel.fetchGames(finalGameCode: gameCode))
                                 // task
-                                //joinViewModel.fetchGames(finalGameCode: gameCode)
+   
                             } label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 8)

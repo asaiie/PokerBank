@@ -10,16 +10,16 @@ import SwiftUI
 struct BetaInGameView: View {
     
     private let game: Game
-    var gameCode : String
     
-    /*init(game: Game){
+    init(game: Game){
         self.game=game
-    }*/
+    }
+    
     var body: some View {
-        Text(gameCode)
+        Text(String(game.gameCode))
     }
 }
 
 #Preview {
-    BetaInGameView()
+    BetaInGameView(game: Game(id: "alksdjfklds", GameHost: "Zubin", TotalMoney: "20", bigBlind: ".1", gameCode: 57890, smallBlind: ".2"))
 }

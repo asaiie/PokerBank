@@ -25,18 +25,22 @@ struct GameService {
             }
     }
     
-    func getAllGames(gameCode: String, completion: @escaping(Game) -> Void){
+    func getAllGames(gameCode: String) -> Game? {
+        var game: Game? = nil
         Firestore.firestore().collection("activeGames")
             .whereField("gameCode", isEqualTo: Int(gameCode))
             .getDocuments{snapshot, _ in
                 guard let documents = snapshot?.documents else {return}
-            guard let game = try? documents[0].data(as: Game.self) else {return}
-            completion(game)
+                guard let gameDocument = try? documents[0].data(as: Game.self) else {print("HELLO"); return}
+                game = gameDocument
+                print(game)
                 /*documents.forEach { doc in
                     print(doc.data()["gameCode"])
                 }*/
                 //need to put a try catch here.
             }
+        print(game)
+        return game
         }
         
     }
