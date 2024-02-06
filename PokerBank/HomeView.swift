@@ -124,7 +124,8 @@ struct HomeView: View {
                                     .foregroundStyle(Color(.systemGray4))
                             }
                             Button {
-                                    joinViewModel.fetchGames(finalGameCode: gameCode)
+                                Task{
+                                    try await joinViewModel.getAllGames(gameCode: gameCode)}
                                 //BetaInGameView(joinViewModel.fetchGames(finalGameCode: gameCode))
                                 // task
    

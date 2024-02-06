@@ -9,28 +9,39 @@ import Foundation
 import Firebase
 import FirebaseFirestoreSwift
 
-class ActiveGameViewModel: ObservableObject {
+
+@MainActor class ActiveGameViewModel: ObservableObject {
     let service = GameService()
-    @Published var currentGame: Game? = nil
+    @Published var currentGame: Game?
     
-    init(){}
-    func fetchGames(finalGameCode: String){
+    init(){
+        
+    }
+    /*
+    func fetchGames(finalGameCode: String) async throws {
         getAllGames(gameCode: finalGameCode)
     }
+    */
     
-    func getAllGames(gameCode: String) {
-        var game: Game? = nil
-            Firestore.firestore().collection("activeGames")
+    func getAllGames(gameCode: String) async throws {
+        do{
+            print(self.currentGame)
+            let x = try await Firestore.firestore().collection("activeGames")
                 .whereField("gameCode", isEqualTo: Int(gameCode))
-                .getDocuments{snapshot, _ in
-                    guard let documents = snapshot?.documents else {return}
-                    guard let gameDocument = try? documents[0].data(as: Game.self) else {print("HELLO"); return}
-                    game = gameDocument
-                    print("Hello")
-                    self.currentGame = game
-                    //need to put a try catch here.
-                }
-
+                .getDocuments() /*{snapshot, _ in
+                                 guard let documents = snapshot?.documents else {return}
+                                 guard let gameDocument = try? documents[0].data(as: Game.self) else {print("HELLO"); return}
+                                 game = gameDocument
+                                 self.currentGame = game
+                                 print(self.currentGame)
+                                 //need to put a try catch here.
+                                 }*/
+            self.currentGame = try x.documents[0].data(as: Game.self)
+            print(self.currentGame)
         }
+        catch{
+            print("this is an error that we shall update later")
+        }
+    }
 
 }
