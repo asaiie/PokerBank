@@ -19,9 +19,8 @@ struct PokerBankApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(gameViewModel: gameViewModel)
                 .environmentObject(viewModel)
-                .environmentObject(gameViewModel)
         }
     }
 }

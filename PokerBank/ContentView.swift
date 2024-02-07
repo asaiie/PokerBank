@@ -9,24 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
-    @EnvironmentObject var gameViewModel: ActiveGameViewModel
+    @ObservedObject var gameViewModel: ActiveGameViewModel
 
     var body: some View {
         Group {
             if viewModel.userSession != nil {
-                if gameViewModel.currentGame != nil {
-                    BetaInGameView(game: gameViewModel.currentGame!)
+                if gameViewModel.currentGame == nil {
+                    HomeView()
                 }
                 else{
-                    HomeView()
+                    BetaInGameView(game: gameViewModel.currentGame!)
                 }
             } else {
                 LoginView()
             }
-        }
+        }.onChange(of: gameViewModel.currentGame) {
+            print("hi")
+            }
+
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(gameViewModel: ActiveGameViewModel())
 }
