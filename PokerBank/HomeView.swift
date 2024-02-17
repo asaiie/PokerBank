@@ -21,6 +21,8 @@ struct HomeView: View {
     @ObservedObject var uploadViewModel = UploadGameViewModel()
     @ObservedObject var joinViewModel = ActiveGameViewModel()
     @State private var selectedOption: HomeGameOptions = .createGame
+    @State private var selectedGame: Game?
+    @State private var path = NavigationPath()
     
     var body: some View {
         NavigationStack{
@@ -123,13 +125,19 @@ struct HomeView: View {
                                     .stroke(lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(Color(.systemGray4))
                             }
-                            Button {
-                                Task{
-                                    try await joinViewModel.getAllGames(gameCode: gameCode)}
-                                //BetaInGameView(joinViewModel.fetchGames(finalGameCode: gameCode))
-                                // task
-   
-                            } label: {
+                            NavigationStack(path: $path){
+                                Button {
+                                    Task{
+                                        if let theGame = try await joinViewModel.getAllGames(gameCode: gameCode){
+                                            path.append(theGame)
+                                        }
+                                        //try await BetaInGameView(game: joinViewModel.getAllGames(gameCode: gameCode)!)
+                                    }
+                                    // task
+                                    
+                                }
+                                
+                            label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 8)
                                         .frame(width: 44, height: 44)
@@ -139,7 +147,11 @@ struct HomeView: View {
                                         .frame(width: 24, height: 24)
                                         .foregroundColor(.black)
                                 }
+                            }.navigationDestination(for: Game.self){
+                                game in BetaInGameView(game: game)
+                             }
                             }
+                            
                         }
                     } else {
                         CollapsedPickerView(title: "Join Game", description: "Enter code")
@@ -153,6 +165,10 @@ struct HomeView: View {
                 .shadow(radius: 10)
                 .onTapGesture {
                     withAnimation(.snappy) { selectedOption = .joinGame }
+                }
+                if let game = selectedGame{
+                    //BetaInGameView(game: game)
+                    InGameView()
                 }
                 
                 Spacer()

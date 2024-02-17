@@ -7,7 +7,7 @@
 
 import FirebaseFirestoreSwift
 
-struct Game: Identifiable, Decodable, Equatable {
+struct Game: Identifiable, Decodable, Equatable, Hashable {
     @DocumentID var id: String?
     let GameHost: String
     let TotalMoney: String

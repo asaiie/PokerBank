@@ -16,10 +16,10 @@ struct BetaInGameView: View {
     }
     
     var body: some View {
-        Text(String(game.gameCode))
+        Text(String(game.bigBlind))
     }
 }
 
 #Preview {
-    BetaInGameView(game: Game(id: "alksdjfklds", GameHost: "Zubin", TotalMoney: "20", bigBlind: ".1", gameCode: 57890, smallBlind: ".2"))
+    BetaInGameView(game: Game(id: "alksdjfklds", GameHost: "john doe", TotalMoney: "20", bigBlind: ".1", gameCode: 57890, smallBlind: ".2"))
 }

@@ -14,18 +14,20 @@ struct ContentView: View {
     var body: some View {
         Group {
             if viewModel.userSession != nil {
-                if gameViewModel.currentGame == nil {
-                    HomeView()
-                }
-                else{
-                    BetaInGameView(game: gameViewModel.currentGame!)
-                }
-            } else {
+//                if gameViewModel.currentGame == nil {
+//                    HomeView()
+//                }
+//                else{
+//                    BetaInGameView(game: gameViewModel.currentGame!)
+//                }
+                HomeView()
+            } 
+            else {
                 LoginView()
             }
-        }.onChange(of: gameViewModel.currentGame) {
-            print("hi")
-            }
+        }//.onChange(of: gameViewModel.currentGame) {
+        //   print("hi")
+         //   }
 
     }
 }

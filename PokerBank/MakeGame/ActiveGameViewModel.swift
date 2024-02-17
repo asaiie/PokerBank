@@ -12,11 +12,11 @@ import FirebaseFirestoreSwift
 
 @MainActor class ActiveGameViewModel: ObservableObject {
     let service = GameService()
-    @Published var currentGame: Game? {
+    @Published var currentGame: Game? /*{
         didSet {
             print("currentGame was set to \(String(describing: currentGame))")
         }
-    }
+    }*/
 
     
     init(){
@@ -28,7 +28,7 @@ import FirebaseFirestoreSwift
     }
     */
     
-    func getAllGames(gameCode: String) async throws {
+    func getAllGames(gameCode: String) async throws -> Game? {
             //print(self.currentGame)
             let x = try await Firestore.firestore().collection("activeGames")
             .whereField("gameCode", isEqualTo: Int(gameCode)!)
@@ -41,6 +41,9 @@ import FirebaseFirestoreSwift
                                  //need to put a try catch here.
                                  }*/
         self.currentGame = try x.documents[0].data(as: Game.self)
+        try print(x.documents[0].data(as: Game.self))
+        return try x.documents[0].data(as: Game.self)
+
     }
 
 }
