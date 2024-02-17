@@ -148,7 +148,7 @@ struct HomeView: View {
                                         .foregroundColor(.black)
                                 }
                             }.navigationDestination(for: Game.self){
-                                game in BetaInGameView(game: game)
+                                game in InGameView(game: game)
                              }
                             }
                             
@@ -166,10 +166,11 @@ struct HomeView: View {
                 .onTapGesture {
                     withAnimation(.snappy) { selectedOption = .joinGame }
                 }
+                /*
                 if let game = selectedGame{
                     //BetaInGameView(game: game)
-                    InGameView()
-                }
+                    InGameView(game: game)
+                }*/
                 
                 Spacer()
                 

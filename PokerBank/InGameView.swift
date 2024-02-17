@@ -9,6 +9,12 @@ import SwiftUI
 
 struct InGameView: View {
     @EnvironmentObject var viewModel: AuthViewModel
+    private let game: Game
+    
+    init(game: Game){
+        self.game=game
+    }
+    
     var body: some View {
         VStack{
             VStack {
@@ -39,7 +45,7 @@ struct InGameView: View {
                 .padding(.leading)
                 .padding(.trailing)
             
-            Text("Code: " + "G4X7FG")
+            Text("Code: " + String(game.gameCode))
             
             HStack{
                 VStack{
@@ -78,5 +84,5 @@ struct InGameView: View {
 }
 
 #Preview {
-    InGameView()
+    InGameView(game: Game(id: "alksdjfklds", GameHost: "john doe", TotalMoney: "20", bigBlind: ".1", gameCode: 57890, smallBlind: ".2"))
 }
