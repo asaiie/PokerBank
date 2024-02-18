@@ -84,5 +84,5 @@ struct InGameView: View {
 }
 
 #Preview {
-    InGameView(game: Game(id: "alksdjfklds", GameHost: "john doe", TotalMoney: "20", bigBlind: ".1", gameCode: 57890, smallBlind: ".2"))
+    InGameView(game: Game( GameHost: "john doe", TotalMoney: "20", bigBlind: ".1", gameCode: 57890, smallBlind: ".2"))
 }

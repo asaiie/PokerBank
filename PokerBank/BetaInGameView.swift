@@ -21,5 +21,5 @@ struct BetaInGameView: View {
 }
 
 #Preview {
-    BetaInGameView(game: Game(id: "alksdjfklds", GameHost: "john doe", TotalMoney: "20", bigBlind: ".1", gameCode: 57890, smallBlind: ".2"))
+    BetaInGameView(game: Game(GameHost: "john doe", TotalMoney: "20", bigBlind: ".1", gameCode: 57890, smallBlind: ".2"))
 }

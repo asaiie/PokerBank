@@ -11,8 +11,8 @@ import Firebase
 import FirebaseFirestoreSwift
 
 struct GameService {
-    func uploadGame(bigBlind: String, smallBlind: String, currMoney: String, gameCode: Int) {
-        guard let uid = Auth.auth().currentUser?.uid else {return}
+    func uploadGame(bigBlind: String, smallBlind: String, currMoney: String, gameCode: Int) -> Game? {
+        guard let uid = Auth.auth().currentUser?.uid else {return nil}
         let data = ["GameHost": uid,
                     "bigBlind": bigBlind,
                     "smallBlind": smallBlind,
@@ -20,9 +20,12 @@ struct GameService {
                     "gameCode": gameCode] as [String : Any]
         
         Firestore.firestore().collection("activeGames").document()
-            .setData(data){ _ in
+            .setData(data)/*{ _ in
                 print("Did upload game...")
-            }
+            }*/
+        var game: Game
+        game =  Game(GameHost: uid, TotalMoney: currMoney, bigBlind: bigBlind, gameCode: gameCode, smallBlind: smallBlind)
+        return game
     }
     
     func getAllGames(gameCode: String) -> Game? {

@@ -70,23 +70,29 @@ struct HomeView: View {
                                     .stroke(lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                                     .foregroundStyle(Color(.systemGray4))
                             }
-                            
-                            Button {
-                                // task
-                                uploadViewModel.uploadGame(wBig: bigBlind, wSmall: smallBlind, wCurr: "0", wGame: Int.random(in: 10000..<99999))
-
-                            } label: {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .frame(width: 44, height: 44)
-                                        .foregroundColor(springGreen)
-                                    Image(systemName: "arrow.right")
-                                        .resizable()
-                                        .frame(width: 24, height: 24)
-                                        .foregroundColor(.black)
-                                }
+                            NavigationStack(path: $path){
+                                
+                                Button {
+                                    Task{
+                                        let theGame:Game = uploadViewModel.uploadGame(wBig: bigBlind, wSmall: smallBlind, wCurr: "0", wGame: Int.random(in: 10000..<99999))!
+                                        path.append(theGame)
+                                    }
+                                    // task
+                                                                        
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .frame(width: 44, height: 44)
+                                            .foregroundColor(springGreen)
+                                        Image(systemName: "arrow.right")
+                                            .resizable()
+                                            .frame(width: 24, height: 24)
+                                            .foregroundColor(.black)
+                                    }
+                                }.navigationDestination(for: Game.self){
+                                    game in InGameView(game: game)
+                                 }
                             }
-    
                         }
                     } else {
                         CollapsedPickerView(title: "Create Game", description: "Enter blinds")
