@@ -28,21 +28,7 @@ struct GameService {
         return game
     }
     
-    func getAllGames(gameCode: String) -> Game? {
-        var game: Game? = nil
-            Firestore.firestore().collection("activeGames")
-                .whereField("gameCode", isEqualTo: Int(gameCode))
-                .getDocuments{snapshot, _ in
-                    guard let documents = snapshot?.documents else {return}
-                    guard let gameDocument = try? documents[0].data(as: Game.self) else {print("HELLO"); return}
-                    game = gameDocument
-                    //need to put a try catch here.
-                    print(game)
-                }
-        print(game)
-        return game
-        }
-    
+
         
     }
 
